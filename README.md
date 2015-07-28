@@ -1,8 +1,8 @@
 # Algorithms_Objective-C
 算法导论里的算法实现（Objective-C版）
 
-#### 插入排序，书里面遇到的第一个排序（为什么不是冒泡排序）
-
+1.  插入排序，书里面遇到的第一个排序（为什么不是冒泡排序）
+⋅⋅⋅将未排序的数据插入到已排序的队列中
     - (NSArray *)insertionSort:(NSMutableArray *)willSortArray {
     	NSLog(@"#####################  InsertionSort Begin  #####################");
     	NSInteger willSortArrayLength = willSortArray.count;
