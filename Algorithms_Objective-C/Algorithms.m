@@ -58,7 +58,7 @@
     NSInteger rightIndex = 0;
     NSLog(@"leftArray: %@", leftArray);
     NSLog(@"rightArray: %@", rightArray);
-    for (NSInteger index = begin; index < end; ++index) {
+    for (NSInteger index = begin; index <= end; ++index) {
         NSLog(@"index: %ld", index);
         if (leftIndex < leftArray.count && rightIndex < rightArray.count) {
             NSInteger left = [leftArray[leftIndex] integerValue];
@@ -82,6 +82,7 @@
                 ++leftIndex;
             }
         }
+        NSLog(@"sorting Array:%ld ,current sort result:%@", index, [willSortArray componentsJoinedByString:@","]);
     }
     NSLog(@"willSortArray: %@", [willSortArray componentsJoinedByString:@","]);
     return willSortArray;
