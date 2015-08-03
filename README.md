@@ -5,6 +5,7 @@
 1.  插入排序，书里面遇到的第一个排序（为什么不是冒泡排序）
 
    将未排序的数据插入到已排序的队列中
+
     	- (NSArray *)insertionSort:(NSMutableArray *)willSortArray {
     	NSInteger willSortArrayLength = willSortArray.count;
     	for (NSInteger indexOfWillSortArray = 2; indexOfWillSortArray < willSortArrayLength; ++indexOfWillSortArray) {
@@ -22,6 +23,7 @@
     }
  
 2.  归并排序
+
     	- (NSArray *)mergeSort:(NSMutableArray *)willSortArray beginIndex:(NSInteger)begin endIndex:(NSInteger)end {
         if (begin < end) {
             NSInteger middle = (begin + end) / 2;
@@ -31,6 +33,7 @@
         }
         return willSortArray;
     }
+
     	- (NSArray *)merge:(NSMutableArray *)willSortArray beginIndex:(NSInteger)begin middleIndex:(NSInteger)middle endIndex:(NSInteger)end {
         NSMutableArray *leftArray = [NSMutableArray array];
         NSMutableArray *rightArray = [NSMutableArray array];
