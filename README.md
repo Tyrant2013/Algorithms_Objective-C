@@ -46,29 +46,29 @@
             NSInteger leftIndex = 0;
             NSInteger rightIndex = 0;
             for (NSInteger index = begin; index <= end; ++index) {
-            if (leftIndex < leftArray.count && rightIndex < rightArray.count) {
-                NSInteger left = [leftArray[leftIndex] integerValue];
-                NSInteger right = [rightArray[rightIndex] integerValue];
-                if (left < right) {
-                    willSortArray[index] = @(left);
-                    ++leftIndex;
+                if (leftIndex < leftArray.count && rightIndex < rightArray.count) {
+                    NSInteger left = [leftArray[leftIndex] integerValue];
+                    NSInteger right = [rightArray[rightIndex] integerValue];
+                    if (left < right) {
+                        willSortArray[index] = @(left);
+                        ++leftIndex;
+                    }
+                    else {
+                        willSortArray[index] = @(right);
+                        ++rightIndex;
+                    }
                 }
                 else {
-                    willSortArray[index] = @(right);
-                    ++rightIndex;
+                    if (leftIndex >= leftArray.count && rightIndex < rightArray.count) {
+                        willSortArray[index] = rightArray[rightIndex];
+                        ++rightIndex;
+                    }
+                    else if (leftIndex < leftArray.count && rightIndex >= rightArray.count) {
+                        willSortArray[index] = leftArray[leftIndex];
+                        ++leftIndex;
+                    }
                 }
             }
-            else {
-                if (leftIndex >= leftArray.count && rightIndex < rightArray.count) {
-                    willSortArray[index] = rightArray[rightIndex];
-                    ++rightIndex;
-                }
-                else if (leftIndex < leftArray.count && rightIndex >= rightArray.count) {
-                    willSortArray[index] = leftArray[leftIndex];
-                    ++leftIndex;
-                }
-            }
-        }
-        return willSortArray;
+            return willSortArray;
     	} 
 
