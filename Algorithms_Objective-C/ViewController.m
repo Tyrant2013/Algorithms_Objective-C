@@ -29,12 +29,14 @@
     [super viewWillAppear:animated];
     [self.willSortedArray addObjectsFromArray:@[@45, @34, @2, @90, @12, @56, @1, @8, @67, @89]];
     NSLog(@"WillSortedArray: %@", [self.willSortedArray componentsJoinedByString:@","]);
-    self.sortedArray = [self.algorithms insertionSort:self.willSortedArray];
+//    self.sortedArray = [self.algorithms insertionSort:self.willSortedArray];
+    self.sortedArray = [self.algorithms mergeSort:self.willSortedArray beginIndex:0 endIndex:self.willSortedArray.count - 1];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    NSLog(@"InsertionSort: %@", [self.sortedArray componentsJoinedByString:@","]);
+//    NSLog(@"InsertionSort: %@", [self.sortedArray componentsJoinedByString:@","]);
+    NSLog(@"MergeSort: %@", [self.sortedArray componentsJoinedByString:@","]);
 }
 
 - (void)didReceiveMemoryWarning {

@@ -13,5 +13,7 @@
 #pragma mark - 增量方法
 /// 插入排序
 - (NSArray *)insertionSort:(NSArray *)willSortArray;
+/// 归并排序
+- (NSArray *)mergeSort:(NSMutableArray *)willSortArray beginIndex:(NSInteger)begin endIndex:(NSInteger)end;
 
 @end
