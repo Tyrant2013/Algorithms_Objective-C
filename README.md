@@ -20,7 +20,7 @@
         	willSortArray[indexOfSorted + 1] = @(valueOnIndex);
     	}
         return willSortArray;
-    }
+	    }
  
 2.  归并排序
 
@@ -32,7 +32,7 @@
             [self merge:willSortArray beginIndex:begin middleIndex:middle endIndex:end];
         }
         return willSortArray;
-    }
+    	}
 
     	- (NSArray *)merge:(NSMutableArray *)willSortArray beginIndex:(NSInteger)begin middleIndex:(NSInteger)middle endIndex:(NSInteger)end {
         NSMutableArray *leftArray = [NSMutableArray array];
@@ -70,5 +70,5 @@
             }
         }
         return willSortArray;
-    } 
+    	} 
 
