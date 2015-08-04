@@ -16,4 +16,7 @@
 /// 归并排序
 - (NSArray *)mergeSort:(NSMutableArray *)willSortArray beginIndex:(NSInteger)begin endIndex:(NSInteger)end;
 
+
+/// 查找最大子数组
+- (NSArray *)findMaximumSubarray:(NSArray *)array low:(NSInteger)low high:(NSInteger)high;
 @end

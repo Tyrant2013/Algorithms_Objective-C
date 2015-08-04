@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSMutableArray *willSortedArray;
 @property (nonatomic, copy) NSArray *sortedArray;
 
+@property (nonatomic, copy) NSMutableArray *numbers;
+
 @end
 
 @implementation ViewController
@@ -30,13 +32,15 @@
     [self.willSortedArray addObjectsFromArray:@[@45, @34, @2, @90, @12, @56, @1, @8, @67, @89, @(77)]];
     NSLog(@"WillSortedArray: %@", [self.willSortedArray componentsJoinedByString:@","]);
 //    self.sortedArray = [self.algorithms insertionSort:self.willSortedArray];
-    self.sortedArray = [self.algorithms mergeSort:self.willSortedArray beginIndex:0 endIndex:self.willSortedArray.count - 1];
+//    self.sortedArray = [self.algorithms mergeSort:self.willSortedArray beginIndex:0 endIndex:self.willSortedArray.count - 1];
+    [self.numbers addObjectsFromArray:@[@1, @9, @-10, @12, @-4, @4, @20, @-18]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 //    NSLog(@"InsertionSort: %@", [self.sortedArray componentsJoinedByString:@","]);
-    NSLog(@"MergeSort: %@", [self.sortedArray componentsJoinedByString:@","]);
+//    NSLog(@"MergeSort: %@", [self.sortedArray componentsJoinedByString:@","]);
+    NSLog(@"Find Max: %@", [[self.algorithms findMaximumSubarray:self.numbers low:0 high:self.numbers.count - 1] componentsJoinedByString:@","]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,6 +60,13 @@
         _willSortedArray = [NSMutableArray array];
     }
     return _willSortedArray;
+}
+
+- (NSMutableArray *)numbers {
+    if (_numbers == nil) {
+        _numbers = [NSMutableArray array];
+    }
+    return _numbers;
 }
 
 @end
